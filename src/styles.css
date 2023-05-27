@@ -384,9 +384,9 @@ input.au-input.au-input-xl {
 .navbar-sidebar .navbar-list li a {
   display: block;
   text-decoration: none;
-  color: navy;
   font-size: 16px;
   padding: 5px 0;
+  color: navy;
 }
 
 .navbar-sidebar .navbar-list li a i {
@@ -394,11 +394,7 @@ input.au-input.au-input-xl {
 }
 
 .navbar-sidebar .navbar-list li a:hover {
-  color: white;
-  border: 2px solid #0da8e4;
-  border-radius: 7px;
-  background-color: #0da8e4;
-  text-align: center;
+  font-weight: bold;
 }
 
 /*
@@ -831,6 +827,11 @@ a.primary-btn:hover {
 
 .active-link {
   font-weight: bold;
+  color: white !important;
+  border: 1px solid #0da8e4;
+  border-radius: 7px;
+  background-color: #0da8e4;
+  text-align: center;
 }
 
 /*

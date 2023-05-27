@@ -377,9 +377,14 @@ input.au-input.au-input-xl {
   padding-bottom: 0;
 }
 
+.navbar-list li {
+  list-style-type: none;
+}
+
 .navbar-sidebar .navbar-list li a {
   display: block;
-  color: #555;
+  text-decoration: none;
+  color: navy;
   font-size: 16px;
   padding: 5px 0;
 }
@@ -948,6 +953,7 @@ footer ul li {
   .au-input-xl {
     min-width: 350px;
   }
+
   .logo {
     text-align: center;
   }
@@ -1138,7 +1144,7 @@ footer ul li {
     margin-top: 9px;
     padding-left: 12px;
   }
-  
+
   .header-mobile .header-mobile-bar {
     padding: 6px 0;
     background: #fff;

@@ -554,14 +554,17 @@ input.au-input.au-input-xl {
   outline: 0;
   margin-left: 5px;
 }
+
 .product-box {
   margin-bottom: 60px;
 }
+
 .price {
   margin: 15px 0 0;
   font-weight: 800;
   color: #0da8e4;
 }
+
 .product-box h1 {
   font-size: 18px;
   border-bottom: 1px solid #ccc;
@@ -570,6 +573,7 @@ input.au-input.au-input-xl {
   padding-top: 12px;
   margin-bottom: 7px;
 }
+
 .product-box h2 {
   font-size: 15px;
   padding-bottom: 0;
@@ -754,6 +758,7 @@ table.table.table-bordered th {
   background-color: #0da8e4 !important;
   border-color: #0da8e4 !important;
 }
+
 a.primary-btn {
   background: #05143f;
   padding: 7px 20px;
@@ -763,7 +768,9 @@ a.primary-btn {
   border-radius: 2px;
   font-size: 14px;
   margin-top: 5px;
+  text-decoration: none;
 }
+
 a.primary-btn:hover {
   background: #0da8e4;
   color: #fff;

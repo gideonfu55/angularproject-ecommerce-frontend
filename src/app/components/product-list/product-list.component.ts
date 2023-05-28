@@ -11,8 +11,9 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductListComponent implements OnInit {
 
-  products: Product[] = []
-  currentCategoryId: number = 1
+  products: Product[] = [];
+  currentCategoryId: number = 1;
+  currentCategoryName: string = '';
 
   constructor(
     private productService: ProductService,
@@ -27,13 +28,16 @@ export class ProductListComponent implements OnInit {
 
   listProducts() {
     // check if id parameter is available:
-    const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id')
+    const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
 
     if (hasCategoryId) {
       // get the "id" param string. Convert string to a number using the + symbol:
       this.currentCategoryId = +this.route.snapshot.paramMap.get('id')!;
+      this.currentCategoryName = this.route.snapshot.paramMap.get('name')!;
+
     } else {
-      this.currentCategoryId = 1
+      this.currentCategoryId = 1;
+      this.currentCategoryName = 'books'
     }
 
     // Get the products for the given category id

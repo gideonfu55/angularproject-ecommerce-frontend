@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
 
     } else {
       this.currentCategoryId = 1;
-      this.currentCategoryName = 'books'
+      this.currentCategoryName = 'Books'
     }
 
     // Get the products for the given category id

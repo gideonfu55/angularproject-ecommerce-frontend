@@ -10,9 +10,8 @@ export class SearchComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  ngOnInit(): void { }
 
   doSearch(value: string) {
     console.log(`value=${value}`)

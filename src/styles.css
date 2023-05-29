@@ -572,6 +572,15 @@ input.au-input.au-input-xl {
   width: 150px;
 }
 
+.product-box a {
+  display: block;
+  text-decoration: none;
+}
+
+.product-box a:hover {
+  color: navy;
+}
+
 .items select {
   width: 100px;
   height: 40px;

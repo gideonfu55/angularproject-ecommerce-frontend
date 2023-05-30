@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, OnInit } from '@angular/core';
@@ -46,9 +47,11 @@ export class ProductListComponent implements OnInit {
     const theKeyWord: string = this.route.snapshot.paramMap.get('keyword')!;
 
     // now search for products using keyword:
-    this.productService.searchProducts(theKeyWord).subscribe((data) => {
-      this.products = data;
-    });
+    this.productService.searchProductsPaginate(
+      this.thePageNumber - 1,
+      this.thePageSize,
+      theKeyWord
+    ).subscribe(this.processResult());
   }
 
   handleListProducts() {
@@ -89,5 +92,14 @@ export class ProductListComponent implements OnInit {
     this.thePageSize = +pageSize;
     this.thePageNumber = 1;
     this.listProducts();
+  }
+
+  private processResult() {
+    return (data: any) => {
+      this.products = data._embedded.products;
+      this.thePageNumber = data.page.number + 1;
+      this.thePageSize = data.page.size;
+      this.theTotalElements = data.page.totalElements;
+    }
   }
 }

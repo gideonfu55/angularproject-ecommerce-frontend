@@ -260,7 +260,7 @@ input.au-input.au-input-xl {
   margin-left: 15px;
 }
 
-.total {
+.totalprice {
   background: #205b8d;
   line-height: 43px;
   color: #fff;
@@ -271,7 +271,7 @@ input.au-input.au-input-xl {
   padding-left: 17px;
 }
 
-.total span {
+.totalprice span {
   display: inline-block;
   background: #fff;
   padding: 0 13px;
@@ -1144,7 +1144,7 @@ footer ul li {
     margin-left: 15px;
   }
 
-  .total span {
+  .totalprice span {
     display: inline-block;
     background: #fff;
     padding: 0 10px;
@@ -1154,7 +1154,7 @@ footer ul li {
     margin-left: 6px;
   }
 
-  .total {
+  .totalprice {
     background: #205b8d;
     line-height: 30px;
     color: #fff;

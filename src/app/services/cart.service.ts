@@ -46,6 +46,33 @@ export class CartService {
   }
 
   computeCartTotals() {
-    throw new Error('Method not implemented.');
+
+    let totalPriceValue: number = 0;
+    let totalQuantityValue: number = 0;
+
+    for (const currentCartItem of this.cartItems) {
+      totalPriceValue += currentCartItem.quantity * currentCartItem.unitPrice;
+      totalQuantityValue += currentCartItem.quantity;
+    }
+
+    // publish the new values for all subscribers to receive updated data
+    this.totalPrice.next(totalPriceValue);
+    this.totalQuantity.next(totalQuantityValue);
+
+    // for debugging:
+    this.logCartData(totalPriceValue, totalQuantityValue)
+  }
+
+  // For cross checking on data accuracy:
+  logCartData(totalPriceValue: number, totalQuantityValue: number) {
+
+    console.log('Contents of the cart:')
+    for (const cartItem of this.cartItems) {
+      const subtotalPrice = cartItem.quantity * cartItem.unitPrice;
+      console.log(`name: ${cartItem.name}, unitPrice: ${cartItem.unitPrice}, Total price: ${subtotalPrice}, Total item quantity: ${cartItem.quantity}`);
+    }
+
+    console.log(`totalPrice: ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQuantityValue}`);
+    console.log('--------');
   }
 }

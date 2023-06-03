@@ -3,21 +3,31 @@
     <div class="container-fluid">
       <table class="table table-bordered">
         <tr>
-          <th width="20%">Product Image</th>
-          <th width="50%">Product Detail</th>
+          <th width="15%">Product Image</th>
+          <th width="55%">Product Detail</th>
           <th width="30%"></th>
         </tr>
         <tr *ngFor="let cartItem of cartItems">
-          <td><img src="{{cartItem.imageUrl}}" class="img-responsive" width="150px"/></td>
+          <td><img src="{{ cartItem.imageUrl }}" class="img-responsive" width="150px"/></td>
           <td>
-            <p>{{cartItem.name}}</p>
-            <p>{{cartItem.unitPrice | currency: 'USD'}}</p>
+            <p class="fw-bold mb-0">{{ cartItem.name }}</p>
+            <p >{{ cartItem.unitPrice | currency: 'USD' }}</p>
           </td>
           <td>
             <div class="items">
-              <label>Quantity:</label>
-              <p>{{cartItem.quantity}}</p>
+              <label class="mt-2 mb-0">Quantity: {{ cartItem.quantity }}</label>
+
+              <label class="mt-3 mb-0 fw-bold d-block">Subtotal:</label>
+              <p class="text-danger">{{ cartItem.unitPrice * cartItem.quantity | currency: 'USD' }}</p>
             </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"></td>
+          <td class="fw-bold">
+            <p class="mt-2">Total Quantity: {{ totalQuantity }}</p>
+            <p>Shipping: FREE</p>
+            <p class="text-danger">Total: {{ totalPrice | currency: 'USD' }}</p>
           </td>
         </tr>
       </table>

@@ -761,17 +761,18 @@ table.table.table-bordered {
   background: #fff;
 }
 
-.table-bordered td,
-.table-bordered th {
-  border: 1px solid #dee2e6;
-}
-
-
 table.table.table-bordered th {
   background: #0da8e4;
   color: #fff;
   font-size: 14px;
-  padding: 7px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.table.table-bordered td,
+.table.table-bordered th {
+  border: 1px solid #dee2e6c7;
+  padding-left: 15px;
 }
 
 .table-responsive {

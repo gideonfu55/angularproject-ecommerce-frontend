@@ -1,36 +1,46 @@
 <div class="main-content">
   <div class="section section-content-p30">
     <div class="container-fluid">
-      <table class="table table-bordered">
-        <tr>
-          <th width="15%">Product Image</th>
-          <th width="55%">Product Detail</th>
-          <th width="30%"></th>
-        </tr>
-        <tr *ngFor="let cartItem of cartItems">
-          <td><img src="{{ cartItem.imageUrl }}" class="img-responsive" width="150px"/></td>
-          <td>
-            <p class="fw-bold mb-0">{{ cartItem.name }}</p>
-            <p >{{ cartItem.unitPrice | currency: 'USD' }}</p>
-          </td>
-          <td>
-            <div class="items">
-              <label class="mt-2 mb-0">Quantity: {{ cartItem.quantity }}</label>
 
-              <label class="mt-3 mb-0 fw-bold d-block">Subtotal:</label>
-              <p class="text-danger">{{ cartItem.unitPrice * cartItem.quantity | currency: 'USD' }}</p>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2"></td>
-          <td class="fw-bold">
-            <p class="mt-2">Total Quantity: {{ totalQuantity }}</p>
-            <p>Shipping: FREE</p>
-            <p class="text-danger">Total: {{ totalPrice | currency: 'USD' }}</p>
-          </td>
-        </tr>
-      </table>
+      <div *ngIf="cartItems.length > 0">
+        <table class="table table-bordered">
+          <tr>
+            <th width="15%">Product Image</th>
+            <th width="55%">Product Detail</th>
+            <th width="30%"></th>
+          </tr>
+          <tr *ngFor="let cartItem of cartItems">
+            <td><img src="{{ cartItem.imageUrl }}" class="img-responsive" width="150px"/></td>
+            <td>
+              <p class="fw-bold mb-0">{{ cartItem.name }}</p>
+              <p>{{ cartItem.unitPrice | currency: 'USD' }}</p>
+            </td>
+            <td>
+              <div class="items">
+                <label class="fw-bold mb-0">Quantity:</label>
+                <span>&nbsp;{{ cartItem.quantity }}</span>
+
+                <br>
+                <label class="d-inline-block fw-bold mt-3 mb-0">Subtotal:</label>
+                <span class="text-danger">&nbsp;{{ cartItem.unitPrice * cartItem.quantity | currency: 'USD' }}</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <td class="fw-bold">
+              <p class="mt-2">Total Quantity: {{ totalQuantity }}</p>
+              <p>Shipping: FREE</p>
+              <p class="text-danger">Total: {{ totalPrice | currency: 'USD' }}</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- If cart is empty then display a message -->
+      <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-12" role="alert">
+        Your shopping cart is currently empty.
+      </div>
     </div>
   </div>
 </div>

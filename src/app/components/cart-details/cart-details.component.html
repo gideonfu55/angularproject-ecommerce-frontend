@@ -19,24 +19,28 @@
               <div class="items">
                 <label class="fw-bold mb-0">Quantity:</label>
 
-                <div class="row no-gutters mt-2">
-                  <div class="col">
-                    <button (click)="decrementQuantity(cartItem)" class="btn btn-primary btn-sm">
-                      <i class="fas fa-minus"></i>
-                    </button>
+                <div class="d-flex">
+                  <div class="row no-gutters mt-2">
+                    <div class="col">
+                      <button (click)="decrementQuantity(cartItem)" class="btn btn-primary btn-sm">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+
+                    <div class="text-center col ml-4 mr-2">
+                      {{ cartItem.quantity }}
+                    </div>
+
+                    <div class="col">
+                      <button (click)="incrementQuantity(cartItem)" class="btn btn-primary btn-sm">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+
+                    <div class="col-8"></div>
                   </div>
 
-                  <div class="text-center col ml-4 mr-2">
-                    {{ cartItem.quantity }}
-                  </div>
-
-                  <div class="col">
-                    <button (click)="incrementQuantity(cartItem)" class="btn btn-primary btn-sm">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-
-                  <div class="col-8"></div>
+                  <button (click)="removeCartItem(cartItem)" class="btn btn-danger btn-sm mt-2 mx-3">Remove</button>
                 </div>
 
                 <br>

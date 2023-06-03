@@ -85,6 +85,27 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
+  updateMonths() {
+
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const creditCardFormGroup = this.checkoutFormGroup.get('creditCard')!;
+
+    const currentYear: number = new Date().getFullYear();
+    const selectedYear: number = Number(creditCardFormGroup.value.expirationYear);
+
+    let startMonth: number;
+
+    if (currentYear == selectedYear) {
+      startMonth = new Date().getMonth() + 1;
+    } else {
+      startMonth = 1;
+    }
+
+    this.checkoutFormService.getCreditCardMonths(startMonth).subscribe(data => {
+      this.creditCardMonths = data;
+    });
+  }
+
   onSubmit() {
     console.log("Handling the submit button.")
     console.log(this.checkoutFormGroup.get('customer')?.value);

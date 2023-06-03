@@ -37,7 +37,21 @@ export class CartService {
 
     // Compute cart price and quantity total:
     this.computeCartTotals();
+  }
 
+  removeFromCart(theCartItem: CartItem) {
+
+    const itemIndex = this.cartItems.findIndex(cartItem => cartItem.id === theCartItem.id);
+
+    if (itemIndex > -1 && theCartItem.quantity > 0) {
+      theCartItem.quantity--;
+    }
+
+    if (theCartItem.quantity === 0) {
+      this.cartItems.splice(itemIndex, 1)
+    }
+
+    this.computeCartTotals();
   }
 
   computeCartTotals() {
@@ -70,4 +84,5 @@ export class CartService {
     console.log(`totalPrice: ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQuantityValue}`);
     console.log('--------');
   }
+
 }

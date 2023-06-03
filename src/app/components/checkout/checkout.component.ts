@@ -147,6 +147,8 @@ export class CheckoutComponent implements OnInit {
         if (formGroupName === 'billingAddress') {
           this.billingAddressStates = data
         }
+
+        formGroup?.get('state')?.setValue(data[0]);
       }
     )
   }

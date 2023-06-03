@@ -769,6 +769,14 @@ table.table.table-bordered th {
   padding-bottom: 7px;
 }
 
+.table.table-bordered .btn-success {
+  background-color: green;
+}
+
+.table.table-bordered .btn-success:hover {
+  background-color: darkgreen;
+}
+
 .table.table-bordered td,
 .table.table-bordered th {
   border: 1px solid #dee2e6c7;

@@ -141,6 +141,7 @@ export class CheckoutComponent implements OnInit {
   get creditCardExpirationYear() { return this.checkoutFormGroup.get('creditCard.expirationYear'); }
 
   // Submit function for making finalizing purchase and sending purchase data to REST API:
+  // - The most important function in this application. 🧐
   onSubmit() {
     console.log("Handling the submit button.")
 
@@ -214,7 +215,6 @@ export class CheckoutComponent implements OnInit {
 
     // navigate back to products page
     this.router.navigateByUrl("/products");
-
   }
 
   getStates(formGroupName: string) {
@@ -254,7 +254,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   updateMonths() {
-
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const creditCardFormGroup = this.checkoutFormGroup.get('creditCard')!;
 

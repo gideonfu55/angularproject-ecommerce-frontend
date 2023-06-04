@@ -189,7 +189,13 @@ export class CheckoutComponent implements OnInit {
     const cartItems = this.cartService.cartItems;
 
     // Create orderItems from cartItems
-    let orderItems: OrderItem[] = cartItems.map(cartItem => new OrderItem(cartItem.imageUrl!, cartItem.unitPrice!, cartItem.quantity!, cartItem.id!));
+    let orderItems: OrderItem[] = cartItems.map(cartItem => new OrderItem(
+      cartItem.imageUrl!,
+      cartItem.unitPrice!,
+      cartItem.quantity!,
+      cartItem.id!
+      )
+    );
 
     // set up purchase
     let purchase = new Purchase();
@@ -216,7 +222,7 @@ export class CheckoutComponent implements OnInit {
     purchase.order = order;
     purchase.orderItems = orderItems;
 
-    // call REST API via the CheckoutService
+    // **call REST API via the CheckoutService** 😃
     this.checkoutService.placeOrder(purchase).subscribe({
       next: response => {
         alert(`Your order has been received.\nOrder tracking number: ${response.orderTrackingNumber}`)
@@ -228,7 +234,6 @@ export class CheckoutComponent implements OnInit {
         alert(`There was an error ${err.message}`);
       }
     });
-
   }
 
   resetCart() {

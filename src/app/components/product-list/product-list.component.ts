@@ -50,6 +50,7 @@ export class ProductListComponent implements OnInit {
   handleSearchProducts() {
     const theKeyword: string = this.route.snapshot.paramMap.get('keyword')!;
 
+    // If we have a different key than the previous, then set thePageNumber to 1:
     if (this.previousKeyword != theKeyword) {
       this.thePageNumber = 1;
     }
@@ -99,7 +100,7 @@ export class ProductListComponent implements OnInit {
     this.listProducts();
   }
 
-  private processResult() {
+  processResult() {
     return (data: any) => {
       this.products = data._embedded.products;
       this.thePageNumber = data.page.number + 1;

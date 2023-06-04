@@ -140,40 +140,7 @@ export class CheckoutComponent implements OnInit {
   get creditCardExpirationMonth() { return this.checkoutFormGroup.get('creditCard.expirationMonth'); }
   get creditCardExpirationYear() { return this.checkoutFormGroup.get('creditCard.expirationYear'); }
 
-  copyShippingAddress(event: any) {
-    if (event.target.checked) {
-      this.checkoutFormGroup.controls['billingAddress']
-        .setValue(this.checkoutFormGroup.controls['shippingAddress'].value);
-
-      this.billingAddressStates = this.shippingAddressStates;
-    }
-    else {
-      this.checkoutFormGroup.controls['billingAddress'].reset();
-      this.billingAddressStates = [];
-    }
-  }
-
-  updateMonths() {
-
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const creditCardFormGroup = this.checkoutFormGroup.get('creditCard')!;
-
-    const currentYear: number = new Date().getFullYear();
-    const selectedYear: number = Number(creditCardFormGroup.value.expirationYear);
-
-    let startMonth: number;
-
-    if (currentYear == selectedYear) {
-      startMonth = new Date().getMonth() + 1;
-    } else {
-      startMonth = 1;
-    }
-
-    this.checkoutFormService.getCreditCardMonths(startMonth).subscribe(data => {
-      this.creditCardMonths = data;
-    });
-  }
-
+  // Submit function for making finalizing purchase and sending purchase data to REST API:
   onSubmit() {
     console.log("Handling the submit button.")
 
@@ -271,6 +238,40 @@ export class CheckoutComponent implements OnInit {
         formGroup?.get('state')?.setValue(data[0]);
       }
     )
+  }
+
+  copyShippingAddress(event: any) {
+    if (event.target.checked) {
+      this.checkoutFormGroup.controls['billingAddress']
+        .setValue(this.checkoutFormGroup.controls['shippingAddress'].value);
+
+      this.billingAddressStates = this.shippingAddressStates;
+    }
+    else {
+      this.checkoutFormGroup.controls['billingAddress'].reset();
+      this.billingAddressStates = [];
+    }
+  }
+
+  updateMonths() {
+
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const creditCardFormGroup = this.checkoutFormGroup.get('creditCard')!;
+
+    const currentYear: number = new Date().getFullYear();
+    const selectedYear: number = Number(creditCardFormGroup.value.expirationYear);
+
+    let startMonth: number;
+
+    if (currentYear == selectedYear) {
+      startMonth = new Date().getMonth() + 1;
+    } else {
+      startMonth = 1;
+    }
+
+    this.checkoutFormService.getCreditCardMonths(startMonth).subscribe(data => {
+      this.creditCardMonths = data;
+    });
   }
 
 }

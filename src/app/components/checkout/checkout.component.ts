@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -180,16 +182,16 @@ export class CheckoutComponent implements OnInit {
     }
 
     // Set up order
-    const order = new Order(this.totalPrice, this.totalQuantity);
+    let order = new Order(this.totalPrice, this.totalQuantity);
 
     // Get cart items
     const cartItems = this.cartService.cartItems;
 
     // Create orderItems from cartItems
-    const orderItems: OrderItem[] = cartItems.map(cartItem => new OrderItem(cartItem));
+    let orderItems: OrderItem[] = cartItems.map(cartItem => new OrderItem(cartItem.imageUrl!, cartItem.unitPrice!, cartItem.quantity!, cartItem.id!));
 
     // set up purchase
-    const purchase = new Purchase();
+    let purchase = new Purchase();
 
     // populate purchase with customer, shipping address, billing address, order and orderItems:
     // Customer:

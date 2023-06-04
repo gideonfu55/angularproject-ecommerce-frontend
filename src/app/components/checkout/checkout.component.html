@@ -16,7 +16,7 @@
                   First Name is required.
                 </div>
                 <div *ngIf="firstName!.errors?.['minlength']">
-                  First Name must be at least 2 characters.
+                  First Name must be at least 2 characters long.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -35,7 +35,7 @@
                   Last Name is required.
                 </div>
                 <div *ngIf="lastName!.errors?.['minlength']">
-                  Last Name must be at least 2 characters.
+                  Last Name must be at least 2 characters long.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -98,7 +98,7 @@
                   Street is required.
                 </div>
                 <div *ngIf="shippingAddressStreet!.errors?.['minlength']">
-                  Street must be at least 2 characters.
+                  Street must be at least 2 characters long.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -117,7 +117,7 @@
                   City is required.
                 </div>
                 <div *ngIf="shippingAddressCity!.errors?.['minlength']">
-                  City must be at least 2 characters.
+                  City must be at least 2 characters long.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -156,7 +156,7 @@
                   Postcode is required.
                 </div>
                 <div *ngIf="shippingAddressPostCode!.errors?.['minlength']">
-                  Postcode must be at least 2 characters.
+                  Postcode must be at least 2 characters long.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -207,7 +207,7 @@
                   Street is required.
                 </div>
                 <div *ngIf="billingAddressStreet!.errors?.['minlength']">
-                  Street must be at least 2 characters.
+                  Street must be at least 2 characters long.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -226,7 +226,7 @@
                   City is required.
                 </div>
                 <div *ngIf="billingAddressCity!.errors?.['minlength']">
-                  City must be at least 2 characters.
+                  City must be at least 2 characters long.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -265,7 +265,7 @@
                   Postcode is required.
                 </div>
                 <div *ngIf="billingAddressPostCode!.errors?.['minlength']">
-                  Postcode must be at least 2 characters.
+                  Postcode must be at least 2 characters long.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -307,7 +307,7 @@
                   Name on card is required.
                 </div>
                 <div *ngIf="creditCardNameOnCard!.errors?.['minlength']">
-                  Name on card must be at least 2 characters.
+                  Name on card must be at least 2 characters long.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -326,7 +326,7 @@
                   Card number is required.
                 </div>
                 <div *ngIf="creditCardNumber!.errors?.['pattern']">
-                  Card number must be in number format and 16 digits.
+                  Card number must 16 digits long.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -345,7 +345,7 @@
                   Security code is required.
                 </div>
                 <div *ngIf="creditCardSecurityCode!.errors?.['pattern']">
-                  Security code must be in number format and 3 digits.
+                  Security code must be 3 digits long.
                 </div>
               </div>
               <!-- End of error message for form validation -->

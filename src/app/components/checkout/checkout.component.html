@@ -285,6 +285,13 @@
                 <option>Visa</option>
                 <option>Mastercard</option>
               </select>
+              <!-- Card Type: error message for required -->
+              <div *ngIf="creditCardType!.invalid && (creditCardType!.dirty || creditCardType!.touched)" class="alert alert-danger mt-1 p-2">
+                <div *ngIf="creditCardType!.errors?.['required']">
+                  Card type is required.
+                </div>
+              </div>
+              <!-- End of error message for form validation -->
             </div>
           </div>
         </div>
@@ -294,6 +301,16 @@
           <div class="col-md-9">
             <div class="input-space">
               <input formControlName="nameOnCard" type="text">
+              <!-- Name on card: error message for required and min length -->
+              <div *ngIf="creditCardType!.invalid && (creditCardType!.dirty || creditCardType!.touched)" class="alert alert-danger mt-1 p-2">
+                <div *ngIf="creditCardType!.errors?.['required'] || creditCardType!.errors?.['notOnlyWhiteSpace']">
+                  Name on card is required.
+                </div>
+                <div *ngIf="creditCardType!.errors?.['minlength']">
+                  Name on card must be at least 2 characters.
+                </div>
+              </div>
+              <!-- End of error message for form validation -->
             </div>
           </div>
         </div>
@@ -303,6 +320,16 @@
           <div class="col-md-9">
             <div class="input-space">
               <input formControlName="cardNumber" type="text">
+              <!-- Card Number: error message for required and min length -->
+              <div *ngIf="creditCardNumber!.invalid && (creditCardNumber!.dirty || creditCardNumber!.touched)" class="alert alert-danger mt-1 p-2">
+                <div *ngIf="creditCardNumber!.errors?.['required']">
+                  Card number is required.
+                </div>
+                <div *ngIf="creditCardNumber!.errors?.['pattern']">
+                  Card number must be in number format and at least 16 digits.
+                </div>
+              </div>
+              <!-- End of error message for form validation -->
             </div>
           </div>
         </div>
@@ -312,6 +339,16 @@
           <div class="col-md-9">
             <div class="input-space">
               <input formControlName="securityCode" type="text">
+              <!-- Security: error message for required and min length -->
+              <div *ngIf="creditCardSecurityCode!.invalid && (creditCardSecurityCode!.dirty || creditCardSecurityCode!.touched)" class="alert alert-danger mt-1 p-2">
+                <div *ngIf="creditCardSecurityCode!.errors?.['required']">
+                  Security code is required.
+                </div>
+                <div *ngIf="creditCardSecurityCode!.errors?.['pattern']">
+                  Security code must be in number format and at least 3 digits.
+                </div>
+              </div>
+              <!-- End of error message for form validation -->
             </div>
           </div>
         </div>
@@ -325,6 +362,13 @@
                   {{month}}
                 </option>
               </select>
+              <!-- Expiration Month: error message for required -->
+              <div *ngIf="creditCardExpirationMonth!.invalid && (creditCardExpirationMonth!.dirty || creditCardExpirationMonth!.touched)" class="alert alert-danger mt-1 p-2">
+                <div *ngIf="creditCardExpirationMonth!.errors?.['required']">
+                  Expiration month is required.
+                </div>
+              </div>
+              <!-- End of error message for form validation -->
             </div>
           </div>
         </div>
@@ -338,6 +382,13 @@
                   {{year}}
                 </option>
               </select>
+              <!-- Expiration Year: error message for required -->
+              <div *ngIf="creditCardExpirationYear!.invalid && (creditCardExpirationYear!.dirty || creditCardExpirationYear!.touched)" class="alert alert-danger mt-1 p-2">
+                <div *ngIf="creditCardExpirationYear!.errors?.['required']">
+                  Expiration year is required.
+                </div>
+              </div>
+              <!-- End of error message for form validation -->
             </div>
           </div>
         </div>

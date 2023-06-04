@@ -237,7 +237,7 @@ input.au-input.au-input-xl {
   line-height: 43px;
   border: 1px solid #e5e5e5;
   font-size: 14px;
-  color: #666;
+  color: #657;
   padding: 0 17px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -814,9 +814,8 @@ table.table.table-bordered th {
 }
 
 .detail-img {
-  width: 30%;
-  height: 40vh;
-  float: left;
+  width: 100%;
+  height: auto;
 }
 
 /**/

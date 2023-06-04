@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, Inject, OnInit } from '@angular/core';
-import { OKTA_AUTH, OktaAuthStateService } from '@okta/okta-angular';
+import { OktaAuthStateService, OKTA_AUTH } from '@okta/okta-angular';
 import { OktaAuth } from '@okta/okta-auth-js';
 
 @Component({
@@ -14,9 +14,10 @@ export class LoginStatusComponent implements OnInit {
   isAuthenticated: boolean = false;
   userFullName: string = '';
 
-  constructor(private oktaAuthService: OktaAuthStateService, @Inject(OKTA_AUTH) private oktaAuth: OktaAuth ) {
-
-  }
+  constructor(
+    private oktaAuthService: OktaAuthStateService,
+    @Inject(OKTA_AUTH) private oktaAuth: OktaAuth
+    ) {}
 
   ngOnInit(): void {
     // Subscribe to authentication state changes
@@ -25,7 +26,7 @@ export class LoginStatusComponent implements OnInit {
         this.isAuthenticated = result.isAuthenticated!;
         this.getUserDetails();
       }
-    )
+    );
   }
 
   getUserDetails() {

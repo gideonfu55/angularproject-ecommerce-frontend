@@ -1,5 +1,3 @@
-import { CartItem } from "./cart-item";
-
 export class OrderItem {
 
   constructor(public imageUrl: string,

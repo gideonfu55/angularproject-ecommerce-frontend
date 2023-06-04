@@ -302,11 +302,11 @@
             <div class="input-space">
               <input formControlName="nameOnCard" type="text">
               <!-- Name on card: error message for required and min length -->
-              <div *ngIf="creditCardType!.invalid && (creditCardType!.dirty || creditCardType!.touched)" class="alert alert-danger mt-1 p-2">
-                <div *ngIf="creditCardType!.errors?.['required'] || creditCardType!.errors?.['notOnlyWhiteSpace']">
+              <div *ngIf="creditCardNameOnCard!.invalid && (creditCardNameOnCard!.dirty || creditCardNameOnCard!.touched)" class="alert alert-danger mt-1 p-2">
+                <div *ngIf="creditCardNameOnCard!.errors?.['required'] || creditCardNameOnCard!.errors?.['notOnlyWhiteSpace']">
                   Name on card is required.
                 </div>
-                <div *ngIf="creditCardType!.errors?.['minlength']">
+                <div *ngIf="creditCardNameOnCard!.errors?.['minlength']">
                   Name on card must be at least 2 characters.
                 </div>
               </div>
@@ -326,7 +326,7 @@
                   Card number is required.
                 </div>
                 <div *ngIf="creditCardNumber!.errors?.['pattern']">
-                  Card number must be in number format and at least 16 digits.
+                  Card number must be in number format and 16 digits.
                 </div>
               </div>
               <!-- End of error message for form validation -->
@@ -345,7 +345,7 @@
                   Security code is required.
                 </div>
                 <div *ngIf="creditCardSecurityCode!.errors?.['pattern']">
-                  Security code must be in number format and at least 3 digits.
+                  Security code must be in number format and 3 digits.
                 </div>
               </div>
               <!-- End of error message for form validation -->

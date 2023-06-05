@@ -1,1 +1,29 @@
-<p>order-history works!</p>
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <h3>Your Orders</h3>
+      <div *ngIf="orderHistList.length > 0">
+        <table class="table table-bordered">
+          <tr>
+            <th width="20%">Order Tracking Number</th>
+            <th width="10%">Total Price</th>
+            <th width="10%">Total Quantity</th>
+            <th width="10%">Date</th>
+
+            <tr *ngFor="let orderHistory of orderHistorylist">
+              <td>{{ orderHistory.orderTrackingNumber }}</td>
+              <td>{{ orderHistory.totalPrice | currency: 'USD' }}</td>
+              <td>{{ orderHistory.totalQuantity }}</td>
+              <td>{{ orderHistory.dateCreated | date: 'medium' }}</td>
+            </tr>
+
+            <!-- If there are no orders -->
+            <div *ngIf="orderHistorylist.length === 0" class="alert alert-warning col-md-12" role="alert">
+              No orders found.
+            </div>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

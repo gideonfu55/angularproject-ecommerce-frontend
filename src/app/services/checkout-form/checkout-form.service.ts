@@ -3,8 +3,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, of } from 'rxjs';
-import { Country } from '../common/country/country';
-import { State } from '../common/state/state';
+import { Country } from '../../common/country/country';
+import { State } from '../../common/state/state';
 
 @Injectable({
   providedIn: 'root'

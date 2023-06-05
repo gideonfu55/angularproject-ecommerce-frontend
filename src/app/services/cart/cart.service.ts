@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Injectable } from '@angular/core';
-import { CartItem } from '../common/cart-item/cart-item';
+import { CartItem } from '../../common/cart-item/cart-item';
 import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({

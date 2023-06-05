@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, OnInit } from '@angular/core';
 import { CartItem } from 'src/app/common/cart-item/cart-item';
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-cart-details',

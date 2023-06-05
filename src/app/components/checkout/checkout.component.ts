@@ -12,9 +12,9 @@ import { Order } from 'src/app/common/order/order';
 import { OrderItem } from 'src/app/common/order-item/order-item';
 import { Purchase } from 'src/app/common/purchase/purchase';
 import { State } from 'src/app/common/state/state';
-import { CartService } from 'src/app/services/cart.service';
-import { CheckoutFormService } from 'src/app/services/checkout-form.service';
-import { CheckoutService } from 'src/app/services/checkout.service';
+import { CartService } from 'src/app/services/cart/cart.service';
+import { CheckoutFormService } from 'src/app/services/checkout-form/checkout-form.service';
+import { CheckoutService } from 'src/app/services/checkout/checkout.service';
 import { CheckoutValidators } from 'src/app/validators/checkout-validators';
 
 @Component({

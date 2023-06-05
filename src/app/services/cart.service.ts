@@ -10,11 +10,26 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class CartService {
 
+  // For computing final information for checkout:
   cartItems: CartItem[] = [];
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
 
-  constructor() { }
+  // For storing session data so that it will not be removed on refresh:
+  storage: Storage = sessionStorage;
+
+  constructor() {
+
+    // read data from storage
+    const data = JSON.parse(this.storage.getItem('cartItems')!);
+
+    if (data != null) {
+      this.cartItems = data;
+
+      // compute totals based on the data that is read from storage
+      this.computeCartTotals();
+    }
+  }
 
   addToCart(theCartItem: CartItem) {
     // check if we already have the item in our cart
@@ -74,6 +89,13 @@ export class CartService {
 
     // for debugging:
     this.logCartData(totalPriceValue, totalQuantityValue)
+
+    // Persist cart data so that refresh is not going to remove it:
+    this.persistCartItems();
+  }
+
+  persistCartItems() {
+    this.storage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
 
   // For cross checking on data accuracy:

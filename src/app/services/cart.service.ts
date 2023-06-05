@@ -16,7 +16,7 @@ export class CartService {
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
 
   // For storing session data so that it will not be removed on refresh:
-  storage: Storage = sessionStorage;
+  storage: Storage = localStorage;
 
   constructor() {
 

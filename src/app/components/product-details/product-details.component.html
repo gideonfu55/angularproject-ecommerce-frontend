@@ -2,11 +2,11 @@
   <div class="container-fluid">
     <div class="row">
 
-      <div class="col-4 pt-3">
+      <div class="col-md-4">
         <img src="{{ product.imageUrl }}" class="detail-img">
       </div>
 
-      <div class="col-8 mt-3" style="padding-right: 55px;">
+      <div class="col-md-8 mt-3" style="padding-right: 55px;">
         <h3 class="fw-bold">{{ product.name }}</h3>
         <div class="price">{{ product.unitPrice | currency:'USD' }}</div>
         <button (click)="addToCart(product)" class="btn btn-primary btn-sm mt-2">Add to cart</button>

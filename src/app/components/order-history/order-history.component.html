@@ -11,7 +11,7 @@
             <th width="10%">Date</th>
           </tr>
 
-          <tr *ngFor="let orderHistory of orderHistoryList" height="30">
+          <tr *ngFor="let orderHistory of orderHistoryList" style="font-size: 0.92rem; height: 35px;">
             <td>{{ orderHistory.orderTrackingNumber }}</td>
             <td>{{ orderHistory.totalPrice | currency: 'USD' }}</td>
             <td>{{ orderHistory.totalQuantity }}</td>

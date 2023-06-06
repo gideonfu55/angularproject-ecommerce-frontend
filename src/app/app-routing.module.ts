@@ -8,6 +8,7 @@ import { OktaAuthGuard, OktaCallbackComponent } from '@okta/okta-angular';
 import { LoginComponent } from './components/login/login.component';
 import { MemberPageComponent } from './components/member-page/member-page.component';
 import { OktaAuth } from '@okta/okta-auth-js';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
   // Use injector to access any service available within your application
@@ -18,7 +19,15 @@ function sendToLoginPage(oktaAuth: OktaAuth, injector: Injector) {
 }
 
 const routes: Routes = [
-  { path: 'members', component: MemberPageComponent, canActivate: [OktaAuthGuard], data: {onAuthRequired: sendToLoginPage} },
+  { path: 'order-history',
+    component: OrderHistoryComponent,
+    canActivate: [OktaAuthGuard],
+    data: {onAuthRequired: sendToLoginPage} },
+
+  { path: 'members',
+    component: MemberPageComponent,
+    canActivate: [OktaAuthGuard],
+    data: {onAuthRequired: sendToLoginPage} },
 
   { path: 'login/callback', component: OktaCallbackComponent },
   { path: 'login', component: LoginComponent },

@@ -16,13 +16,10 @@ export class OrderHistoryComponent implements OnInit {
   constructor(private orderHistoryService: OrderHistoryService) {}
 
   ngOnInit(): void {
-
     this.handleOrderHistory();
-
   }
 
   handleOrderHistory() {
-
     // Read the user's email address from browser storage
     const theEmail = JSON.parse(this.storage.getItem('userEmail')!);
 
@@ -31,8 +28,6 @@ export class OrderHistoryComponent implements OnInit {
       data => {
         this.orderHistoryList = data._embedded.orders;
       }
-    )
-
+    );
   }
-
 }

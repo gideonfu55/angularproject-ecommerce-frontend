@@ -1,6 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+.gitignore
+
+# App Config
 src/app/config/my-app-config.ts
+
+# OpenSSL Certificates and Config
+ssl-localhost
+localhost.conf
 
 # Compiled output
 /dist

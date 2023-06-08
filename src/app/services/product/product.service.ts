@@ -4,13 +4,14 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Product } from '../../common/product/product';
 import { ProductCategory } from '../../common/product-category/product-category';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl = 'http://localhost:8080/api/products';
-  private categoryUrl = 'http://localhost:8080/api/product-category';
+  private baseUrl = environment.LearnFullStackApiUrl + '/products';
+  private categoryUrl = environment.LearnFullStackApiUrl + '/product-category';
 
   constructor(private httpClient: HttpClient) {}
 

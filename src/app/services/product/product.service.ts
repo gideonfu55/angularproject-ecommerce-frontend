@@ -6,12 +6,13 @@ import { Product } from '../../common/product/product';
 import { ProductCategory } from '../../common/product-category/product-category';
 import { environment } from 'src/environments/environment';
 
+
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
-  private baseUrl = environment.LearnFullStackApiUrl + '/products';
-  private categoryUrl = environment.LearnFullStackApiUrl + '/product-category';
+  private baseUrl = environment.learnfullstackApiUrl + '/products';
+  private categoryUrl = environment.learnfullstackApiUrl + '/product-category';
 
   constructor(private httpClient: HttpClient) {}
 

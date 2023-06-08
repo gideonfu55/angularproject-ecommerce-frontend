@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CheckoutService {
 
-  private purchaseUrl = environment.LearnFullStackApiUrl + '/checkout/purchase';
+  private purchaseUrl = environment.learnfullstackApiUrl + '/checkout/purchase';
 
   constructor(private httpClient: HttpClient) { }
 

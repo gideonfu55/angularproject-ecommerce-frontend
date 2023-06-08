@@ -12,8 +12,8 @@ import { environment } from 'src/environments/environment';
 })
 export class CheckoutFormService {
 
-  private countriesUrl = environment.LearnFullStackApiUrl + '/countries';
-  private statesUrl = environment.LearnFullStackApiUrl + '/states'
+  private countriesUrl = environment.learnfullstackApiUrl + '/countries';
+  private statesUrl = environment.learnfullstackApiUrl + '/states'
 
   constructor(private httpClient: HttpClient) { }
 

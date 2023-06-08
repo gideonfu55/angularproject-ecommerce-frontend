@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class OrderHistoryService {
 
-  private orderUrl = environment.LearnFullStackApiUrl + '/orders';
+  private orderUrl = environment.learnfullstackApiUrl + '/orders';
 
   constructor(private httpClient: HttpClient) { }
 
